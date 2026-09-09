@@ -16,3 +16,5 @@ Willkommen auf meinem GitHub-Profil! Hier dokumentiere ich meine praktischen IT-
 ### 📂 Aktuelle Lab-Projekte
 * **Hybrid Active Directory Lab:** Aufbau einer Windows Server 2022 Domäne inkl. GPO-Absicherung.
 * **Linux Server Setup:** Basis-Konfiguration eines Rocky Linux & Debian Servers im Homelab.
+
+![Netzwerk Topologie Schul-Sanierung](images/network-topology.png)
