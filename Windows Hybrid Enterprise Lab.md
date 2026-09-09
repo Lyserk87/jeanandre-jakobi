@@ -19,3 +19,6 @@ Willkommen auf meinem GitHub-Profil! Hier dokumentiere ich meine praktischen IT-
 
 
 https://github.com/Lyserk87/jeanandre-jakobi/blob/main/image/Netzwerk%20Diagramm.drawio.png
+
+
+Meine Schwerpunkte liegen darin das ich Windows Server aufsetzten kann und eine Komplette Netzwerk Infrastruktur mit Windows Server unter VMware erstellen verwalten kann, zudem bin ich in der Lage diese Konfigurationen über die Powershell auszuführen womit ich nicht nur präziser sondern auch effizienter Arbeite. Durch mein Fernstudium habe ich bewiesen das ich neben meiner Haupttätigkeit sehr zuverlässig bin, durch das skriptbasierte arbeiten mit der Powershell liefere ich verlässliche ergebnisse im reinen Remote-Setup. 
