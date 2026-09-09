@@ -18,3 +18,4 @@ Willkommen auf meinem GitHub-Profil! Hier dokumentiere ich meine praktischen IT-
 * **Linux Server Setup:** Basis-Konfiguration eines Rocky Linux & Debian Servers im Homelab.
 
 
+https://github.com/Lyserk87/jeanandre-jakobi/blob/main/image/Netzwerk%20Diagramm.drawio.png
