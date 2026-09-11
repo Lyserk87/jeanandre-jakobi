@@ -1,0 +1,49 @@
+# Computername ändern (erfordert Neustart)
+Rename-Computer -NewName "SRV-DC01" -Restart
+
+# IP-Adresse, Subnetzmaske und Gateway konfigurieren
+New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 192.168.1.10 -PrefixLength 24 -DefaultGateway 192.168.1.1
+
+# DNS-Serveradresse festlegen
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses "127.0.0.1"
+
+Get-NetIPAddress -InterfaceAlias "Ethernet"
+
+# AD-DS-Rolle und Verwaltungstools installieren
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+
+# Eine neue Active-Directory-Gesamtstruktur (Forest) erstellen
+Install-ADDSForest -DomainName "company.local" -SafeModeAdministratorPassword (Read-Host -AsSecureString "SafeModePassword")
+
+Get-ADDomain
+
+# DHCP-Rolle installieren
+Install-WindowsFeature -Name DHCP -IncludeManagementTools
+
+# Einen neuen DHCP-Bereich (Scope) anlegen
+Add-DhcpServerv4Scope -Name "Client-Scope" -StartRange 192.168.1.100 -EndRange 192.168.1.200 -SubnetMask 255.255.255.0 -State Active
+
+# Neuen AD-Benutzer anlegen
+$password = ConvertTo-SecureString "SicheresPasswort123!" -AsPlainText -Force
+New-ADUser -Name "Max Mustermann" -GivenName "Max" -Surname "Mustermann" -SamAccountName "mmustermann" -UserPrincipalName "mmustermann@company.local" -AccountPassword $password -Enabled $true
+
+# Eine Sicherheitsgruppe erstellen
+New-ADGroup -Name "IT-Department" -GroupScope Global -GroupCategory Security
+
+# Benutzer zur Gruppe hinzufügen
+Add-ADGroupMember -Identity "IT-Department" -Members "mmustermann"
+
+Get-ADGroupMember -Identity "IT-Department"
+
+# Status von Windows-Diensten abfragen (z.B. DNS)
+Get-Service -Name DNS
+
+# Dienst neu starten
+Restart-Service -Name DNS
+
+# Auswertung der Ereignisanzeige für kritische Fehler
+Get-EventLog -LogName System -EntryType Error -Newest 10
+
+# Remote-Verwaltung einer Session starten (WinRM)
+Enter-PSSession -ComputerName SRV-DC01
+
