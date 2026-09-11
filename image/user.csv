@@ -1,0 +1,3 @@
+FirstName;LastName;SamAccountName;OU;Department;Title;Password
+Max;Mustermann;mmustermann;OU=Benutzer,OU=IT,DC=company,DC=local;IT;Systemadministrator;P@ssw0rd2026!
+Erika;Musterfrau;emusterfrau;OU=Benutzer,OU=HR,DC=company,DC=local;HR;Personalreferentin;P@ssw0rd2026!
